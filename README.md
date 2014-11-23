@@ -13,7 +13,7 @@ Each files has been loaded in defferent dataframe before being joined together
   * x_test
   * y_test
 
-Meaningful names has been given to coluns that represents ids
+Meaningful names has been given to coluns that represent ids
 
 The following steps has been taken for both training and test sets:
 
@@ -28,7 +28,7 @@ Then, only the columns containing "-mean()" of "-std()" in their names have been
 along with the useful columns  "subject_id", "activity_id", "activity_name",
 in order the produce a final dataframe
 
- Using a data.table, the mean of every column has been calculated grouped by subject_id , and the resulting table
- has been saved into a text file named "result_df.txt"
+Using a data.table, the mean of every column has been calculated grouped by subject_id , and the resulting table
+has been saved into a text file named "result_df.txt"
  
  
