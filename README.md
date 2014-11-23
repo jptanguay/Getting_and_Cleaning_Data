@@ -18,7 +18,7 @@ Meaningful names has been given to coluns that represent ids
 The following steps has been taken for both training and test sets:
 
   * merge y_train values with activity_labels, so we have the activity label on each row later in the final dataset
-  * give names to x_train columns
+  * give names to x_train columns using the features dataset
   * prepend the subject_id to x_train, and append activity_id, activity_name to x_train to form the full train dataset
   * rename the subject_id column for convenience, because the cbind made it longer (subject_train$subject_id)
 
