@@ -25,7 +25,7 @@ data_folder <- ".\\data\\UCI HAR Dataset"
 
 
 
-## define file names relative to paths defines in the configuration section above
+## define file names relative to paths defined in the configuration section above
 labels_filename <- paste(data_folder, "activity_labels.txt", sep="\\")
 
 features_filename <- paste(data_folder, "features.txt", sep="\\")
@@ -81,14 +81,12 @@ full_test_set <- cbind(subject_test$subject_id, x_test, y_test)
 colnames(full_test_set)[1] <- "subject_id"
 
 
-
 ## row bind the training and test datasets 
 ## N.B. the instructions on the page "https://class.coursera.org/getdata-009/human_grading/view/courses/972587/assessments/3/submissions"
 ## says that the run_analysis.R script "Merges the training and the test sets to create one data set."
 ## but using the "merge" function would have no sense. What is needed is a "union", ie. the test dataset is
 ## appended to the end of the training set
 full_set <- rbind(full_train_set, full_test_set)
-#names(full_set)
 
 
 ## using grep, find the columns' names that contain "-mean()" of "-std()", 
@@ -96,18 +94,17 @@ full_set <- rbind(full_train_set, full_test_set)
 ## ... and prepare the array for the columns we want to extract
 mean_std_cols <- grep(".*-mean.*|.*std.*", names(full_set))
 columns_to_extract <- c("subject_id",  "activity_id", "activity_name", names(full_set)[mean_std_cols] )
-#columns_to_extract <- c("subject_id", names(full_set)[mean_std_cols],  "activity_id", "activity_name")
 
-## extract the wanted columns into final_df
+## extract the wanted columns into temp_df
 temp_df <- full_set[, columns_to_extract ]
-#names(final_df)
 
-## using a data.table, calculate the mean of every column by subject_id (if it even make sense, to 
-## 	calculate means of means and std !!?!?
+
+## using a data.table, calculate the mean of every column by subject_id,, activity_id, activity_name
+## (if it even make sense, to compute the means of means and std !!?!?
+## The mean of the columns subject_id, activity_id, activity_name are not computed
 library(data.table)
 DT <- data.table(temp_df)
 result_dt <- DT[,lapply(.SD, mean), by = list(subject_id, activity_id, activity_name)]
-
 
 ## reorder the result_df on the subject_id and write the table to a text file
 result_df <- result_df[order(result_df$subject_id),]
