@@ -9,7 +9,7 @@ The file "run_analysis.R" is the R script created to process the original datase
 
 ----
 
-The following files has been loaded in different dataframes and Meaningful names has been given to coluns that represent ids:
+The following files has been loaded in different dataframes and meaningful names has been given to columns that represent ids:
 
   * activity_labels.txt
   * features.txt
