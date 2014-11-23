@@ -47,16 +47,16 @@ std(): Standard deviation
 ### The prepended variables from other data files:
 
 - "subject_id"
---* integer, id of the subject performing the activity_id
---* values: [1..30]
+  - integer, id of the subject performing the activity_id
+  - values: [1..30]
 
 - "activity_id" 
---* integer, id of the activity
---* values: [1..6]
+  - integer, id of the activity
+  - values: [1..6]
 
 - "activity_name" 
---* string, name of the activity, linked to "activity_id" 
---* values:	1 = WALKING, 2 = WALKING_UPSTAIRS, 3 = WALKING_DOWNSTAIRS, 4 = SITTING, 5 = STANDING,	6 = LAYING
+  - string, name of the activity, linked to "activity_id" 
+  - values:	1 = WALKING, 2 = WALKING_UPSTAIRS, 3 = WALKING_DOWNSTAIRS, 4 = SITTING, 5 = STANDING,	6 = LAYING
 
 ### The complete list of the variables presented in the final data table
 	
