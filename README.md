@@ -28,7 +28,6 @@ Then, only the columns containing "-mean()" of "-std()" in their names have been
 along with the useful columns  "subject_id", "activity_id", "activity_name",
 in order the produce a final dataframe
 
-Using a data.table, the mean of every column has been calculated grouped by subject_id , and the resulting table
-has been saved into a text file named "result_df.txt"
+Using a data.table, the mean of every column has been calculated grouped by subject_id , and the resulting table, after being sorted on the subject_id, has been saved into a text file named "result_df.txt"
  
  
